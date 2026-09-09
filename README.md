@@ -52,7 +52,7 @@ The extension adds two read-only tools. It cannot change your accounts, send mes
 
 Authentication uses OAuth with PKCE. No API key, client secret or access token is bundled. Keep normal tool confirmations enabled. Never share plaintext passwords, complete hashes or raw breach records in a prompt.
 
-To stop using the extension, remove it from your client. You can revoke the linked connection in LeakData to end its account access.
+To stop using the extension locally, disable or remove it from your client. This does not confirm that its OAuth tokens have been revoked. Contact [LeakData Support](mailto:support@leakdata.io) if you need help ending account access; never include passwords or tokens in your message.
 
 ## Connection details
 
