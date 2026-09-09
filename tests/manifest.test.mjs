@@ -5,7 +5,7 @@ import { test } from 'node:test'
 const manifest = JSON.parse(await readFile(new URL('../gemini-extension.json', import.meta.url), 'utf8'))
 const plugin = JSON.parse(await readFile(new URL('../plugin.json', import.meta.url), 'utf8'))
 const antigravityMcp = JSON.parse(await readFile(new URL('../mcp_config.json', import.meta.url), 'utf8'))
-const antigravityRule = await readFile(new URL('../rules/leakdata-safety.md', import.meta.url), 'utf8')
+const antigravityRule = await readFile(new URL('../rules/AGENTS.md', import.meta.url), 'utf8')
 const context = await readFile(new URL('../GEMINI.md', import.meta.url), 'utf8')
 const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8')
 

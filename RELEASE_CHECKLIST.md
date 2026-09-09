@@ -10,6 +10,7 @@ Prepared on September 9, 2026. Version 1.0.0 is a release candidate; no public r
 - Google's Antigravity download was checked against its official SHA-512 digest.
 - Public LeakData documentation, account, pricing, privacy and OAuth links were verified.
 - Hosted validation passed for main commit `197898bf58d4ca37bf449d100ddf64026572a499` in [run 34407948925](https://github.com/leakdatahq/leakdata-gemini-extension/actions/runs/34407948925).
+- A fresh Antigravity CLI 1.1.28 session outside this repository loaded `rules/AGENTS.md` from the installed plugin and correctly identified its supplied-prefix-only, no-plaintext and aggregate-result constraints. The previous custom rule filename passed package validation but was not loaded. This confirms rule discovery; authenticated tool checks remain pending.
 
 ## Required before release
 
