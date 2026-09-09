@@ -1,3 +1,5 @@
+> September 10 release scope: MCP 1.3.2 supports verified-primary-email and supplied-prefix checks only. Domain requests must be declined without a tool call. The 1.3.1 Antigravity OAuth, email and prefix calls worked; its domain call timed out. Full 1.3.2 acceptance and public installation are pending. Earlier checkpoints below are historical.
+
 # Release evidence
 
 Prepared on September 9, 2026. Version 1.0.0 is a release candidate; no public release or Google directory inclusion is claimed.

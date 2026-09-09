@@ -2,7 +2,7 @@
 
 # LeakData for Antigravity and Gemini CLI
 
-Check exposure for your verified email and company domains without leaving Gemini CLI or Antigravity. LeakData returns a concise summary of the evidence it finds, so you can decide what to investigate next.
+Check your verified email for breach exposure and check password hash prefixes in Antigravity. LeakData returns a concise summary of the evidence it finds, so you can decide what to investigate next.
 
 [Create a LeakData account](https://leakdata.io/register?utm_source=gemini_cli&utm_medium=extension&utm_campaign=marketplace) · [View plans](https://leakdata.io/pricing?utm_source=gemini_cli&utm_medium=extension&utm_campaign=marketplace) · [Get help](https://leakdata.io/contact)
 
@@ -11,14 +11,13 @@ Check exposure for your verified email and company domains without leaving Gemin
 | Your question | What LeakData checks |
 | --- | --- |
 | “Check my verified email for breach exposure.” | The primary email verified on your linked LeakData account. |
-| “Help me check a company domain I verified in LeakData.” | You provide the exact domain; LeakData confirms ownership before searching. |
 | “Check the SHA-1 prefix 5BAA6.” | A five-character hash prefix. Never enter your password or full hash. |
 
 Results reflect the evidence available to LeakData. A no-match result does not establish that an account or password is safe. A prefix check alone cannot confirm whether a specific password has appeared in a breach.
 
 ## Before you connect
 
-You need a LeakData account and a verified primary email or domain for exposure searches. Your LeakData plan, account permissions and usage limits apply. The extension does not include a LeakData subscription.
+You need a LeakData account and a verified primary email for exposure searches. Your LeakData plan, account permissions and usage limits apply. The extension does not include a LeakData subscription.
 
 For individual Google accounts, use Antigravity CLI. Gemini CLI requires an eligible enterprise, Google Cloud or API environment. Your Google account access is separate from your LeakData subscription.
 
@@ -48,7 +47,7 @@ Sign in on `leakdata.io` and review the two requested permissions: exposure sear
 
 ## Your account stays in control
 
-The extension adds two read-only tools. It cannot change your accounts, send messages or remediate systems. Exposure searches are limited to assets verified on your linked account.
+The extension adds two read-only tools. It cannot change your accounts, send messages or remediate systems. Exposure searches are limited to the primary email verified on your linked account. Domain searches are not available through this MCP integration.
 
 Authentication uses OAuth with PKCE. No API key, client secret or access token is bundled. Keep normal tool confirmations enabled. Never share plaintext passwords, complete hashes or raw breach records in a prompt.
 
