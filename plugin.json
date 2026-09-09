@@ -1,0 +1,5 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "leakdata",
+  "description": "Check breach exposure for your verified email and domains from Gemini CLI or Antigravity."
+}

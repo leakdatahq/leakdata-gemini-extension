@@ -1,0 +1,23 @@
+{
+  "name": "leakdata-gemini-extension",
+  "version": "1.0.0",
+  "description": "Check breach exposure for your verified email and domains from Gemini CLI or Antigravity.",
+  "mcpServers": {
+    "leakdata": {
+      "httpUrl": "https://leakdata.io/mcp",
+      "timeout": 60000,
+      "includeTools": [
+        "leakdata.search",
+        "leakdata.password_prefix_check"
+      ],
+      "oauth": {
+        "enabled": true,
+        "scopes": [
+          "search",
+          "password-check"
+        ]
+      }
+    }
+  },
+  "contextFileName": "GEMINI.md"
+}
