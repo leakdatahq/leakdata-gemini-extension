@@ -1,6 +1,6 @@
 <img src="assets/logo-fallback.png" alt="LeakData" width="240">
 
-# LeakData for Antigravity and Gemini CLI
+# LeakData for Antigravity CLI and Gemini CLI
 
 Check your verified email for breach exposure and check password hash prefixes in Antigravity. LeakData returns a concise summary of the evidence it finds, so you can decide what to investigate next.
 
@@ -17,9 +17,9 @@ Results reflect the evidence available to LeakData. A no-match result does not e
 
 ## Before you connect
 
-You need a LeakData account and a verified primary email for exposure searches. Your LeakData plan, account permissions and usage limits apply. The extension does not include a LeakData subscription.
+You need an active LeakData plan with API access and a verified primary email for exposure searches. Creating an account alone does not enable this connection. Your account permissions and usage limits apply; the extension does not include a LeakData subscription. [Review plans](https://leakdata.io/pricing?utm_source=gemini_cli&utm_medium=extension&utm_campaign=marketplace) or [contact us](https://leakdata.io/contact) to confirm API access before you connect.
 
-For individual Google accounts, use Antigravity CLI. Gemini CLI requires an eligible enterprise, Google Cloud or API environment. Your Google account access is separate from your LeakData subscription.
+For individual Google accounts, use Antigravity CLI. [Google moved individual Gemini CLI accounts to Antigravity CLI](https://github.com/google-gemini/gemini-cli/discussions/28017). Gemini CLI remains available through eligible enterprise or API access. Your Google account access is separate from your LeakData subscription.
 
 ## Connect Antigravity CLI
 
@@ -30,6 +30,8 @@ agy plugin install ./leakdata
 ```
 
 Open Antigravity, use `/mcp` to find LeakData, and complete authentication in your browser. Review the requested permissions before approving the connection.
+
+If an older connection returns an authorization error, open `/mcp`, restart LeakData and choose Authenticate when prompted. Complete the new browser consent, then retry your check. Do not paste tokens into a prompt or edit authentication files.
 
 ## Connect Gemini CLI
 
@@ -81,4 +83,4 @@ npx --yes @google/gemini-cli@0.59.0 extensions validate .
 agy plugin validate .
 ```
 
-This is a release candidate awaiting the live connection checks listed below. The current validation target is Antigravity CLI `1.1.28`. See [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md) for dated validation and publication evidence. Installation instructions describe the distribution path; they do not establish gallery or MCP Store inclusion.
+Package 1.0.0 passed real Antigravity CLI `1.2.0` verified-email, supplied-prefix and negative-case checks against live MCP `1.3.2`. The pinned CI validator also checks Antigravity CLI `1.1.28` and Gemini CLI `0.59.0`. Actual Gemini account validation remains pending. See [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md) for dated evidence and limitations; source-package distribution does not establish Google gallery or MCP Store inclusion.
