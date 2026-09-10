@@ -17,6 +17,8 @@ Results reflect the evidence available to LeakData. A no-match result does not e
 
 ## Before you connect
 
+**Connection update, September 10:** Some longer Antigravity sessions currently need you to reconnect. We have reproduced an OAuth renewal error and are fixing it. If a check fails, use `/mcp` to authenticate again before retrying. Initial connection and tool checks passed; uninterrupted long-session use is still being verified.
+
 You need an active LeakData plan with API access and a verified primary email for exposure searches. Creating an account alone does not enable this connection. Your account permissions and usage limits apply; the extension does not include a LeakData subscription. [Review plans](https://leakdata.io/pricing?utm_source=gemini_cli&utm_medium=extension&utm_campaign=marketplace) or [contact us](https://leakdata.io/contact) to confirm API access before you connect.
 
 For individual Google accounts, use Antigravity CLI. [Google moved individual Gemini CLI accounts to Antigravity CLI](https://github.com/google-gemini/gemini-cli/discussions/28017). Gemini CLI remains available through eligible enterprise or API access. Your Google account access is separate from your LeakData subscription.
