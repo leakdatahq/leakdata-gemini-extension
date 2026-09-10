@@ -37,9 +37,11 @@ An older persisted connection initially returned Unauthorized. Restart showed Au
 ## Final distribution checks
 
 - [x] Restarted the connected MCP server and verified a fresh own-email call; the existing connection remained authenticated. This does not by itself prove a refresh-token exchange.
-- [ ] Pass hosted validation for the final release commit.
-- [ ] Publish the reviewed source package and versioned release.
-- [ ] Verify public installation with GitHub credential helpers disabled.
+- [x] [Hosted validation passed](https://github.com/leakdatahq/leakdata-gemini-extension/actions/runs/34430880668) for final PR head `811e5023fff85ddfdf3c3fc3cb96d1f357336572` before merge.
+- [x] Published the reviewed source at merge commit `be2cccc4791348be2ed942e7f006c666bb90451d` and [versioned release v1.0.0](https://github.com/leakdatahq/leakdata-gemini-extension/releases/tag/v1.0.0).
+- [x] Cloned the public repository with Git credential helpers disabled, validated and installed that checkout using Antigravity CLI 1.2.0, and compared the installed rule with source.
+
+The release ZIP was fetched without authentication at 02:53 UTC on September 10. It returned HTTP 200, contained 15 files, and matched the local package byte-for-byte: 41,987 bytes; SHA-256 `68c631ec67812868f4ae724f17cd73556a27e9025fb06214d24c6551ac37df06`.
 
 ## Limits and deferred checks
 
