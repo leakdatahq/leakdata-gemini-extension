@@ -6,6 +6,7 @@ Use LeakData only when the user explicitly asks to check breach exposure for the
 
 - `leakdata.search` accepts only `type: "email"`. The server permits only the linked account's verified primary email. Domain searches are unavailable; explain that without invoking a tool or substituting an email search.
 - For the linked account's own email, use `type: "email"` with the query omitted. Domain searches are not available through this extension.
+- If the user gives their email explicitly, preserve that address in `query`; the server verifies that it matches the linked account. Never replace a rejected explicit address with an implicit own-email check.
 - `leakdata.password_prefix_check` accepts exactly five hexadecimal characters from a SHA-1 hash computed locally.
 - Call the prefix tool only when the current user message supplies a locally computed five-character prefix. Never reuse a prefix from an earlier message. Do not invent a prefix, submit an example value, or call the tool while explaining how to prepare a prefix.
 - Never ask for, transmit, or repeat a plaintext password or complete password hash.
@@ -21,4 +22,4 @@ Summarize only the minimum result needed to answer the request. Clearly distingu
 
 Gemini CLI should keep normal tool confirmations enabled. The extension does not mark the LeakData MCP server as trusted.
 
-When a user asks for a current check, make a new tool call and report only its actual result. Do not search local configuration or authentication files to answer exposure questions. If tool discovery requires a schema, use only the client-provided public tool definition; never scan the client configuration directory.
+When a user asks for a current check, make a new tool call and report only its actual result. Exposure checks use the remote LeakData service. Do not inspect or list workspace files, parent directories, local configuration or authentication files to answer them or infer account ownership. If tool discovery requires a schema, use only the client-provided public tool definition; never scan the client configuration directory.
