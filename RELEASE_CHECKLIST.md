@@ -25,6 +25,16 @@ Prefix responses described aggregate groups and did not claim that an individual
 
 An older persisted connection initially returned Unauthorized. Restart showed Auth Needed. New browser consent restored actual calls. The original cause was not established; no token stores were inspected. A first explicit-email prompt also attempted an unnecessary directory lookup; access was denied, rules were tightened, and the ordinary explicit-email case passed in a fresh session.
 
+## September 10 session renewal fix
+
+At 03:26 UTC, the same Antigravity CLI 1.2.0 session failed a fresh email check with `oauth2: invalid_target` after its original access interval. A separate local test using the actual CLI and a short-lived synthetic OAuth grant showed that the client supplied `resource` during authorization and code exchange, then omitted it on three refresh requests. No real credentials or production token payloads were captured.
+
+The [server fix](https://github.com/leakdatahq/leakdata/pull/179) accepts an omitted refresh resource only when the existing grant matches the configured MCP resource exactly. Client binding, permissions, account eligibility, token rotation and replay rejection remain enforced; explicit malformed or foreign resources are rejected. Forty-seven focused security tests and lint passed.
+
+The [protected rollout](https://github.com/leakdatahq/leakdata/actions/runs/34434164166) completed at 06:03 UTC for commit `cca753dda9dbb4d5c663b7d7a0fb82bb78a2211e`. The original session, whose browser consent was completed around 02:24 UTC, then completed a fresh verified-email check at 06:12 UTC and a fresh `482C8` prefix check at 06:14 UTC. The actual tool results were no email exposure found and 1,925 candidate hashes, respectively. No new sign-in or consent was required. Ten public protocol checks also passed.
+
+This verifies recovery of the previously failing live session after deployment. The production refresh request itself was not inspected, and it does not establish indefinite session reliability or server-side revocation. The client package is unchanged; version 1.0.0 does not need reinstalling for this server fix.
+
 ## Package validation
 
 - Node.js 24.18.0 and npm 11.16.0: three package checks passed.
