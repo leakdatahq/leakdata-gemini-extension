@@ -1,36 +1,52 @@
 # Release evidence
 
-Updated September 10, 2026. Package 1.0.0 is a release candidate for MCP server 1.3.2. Public release and directory inclusion remain pending.
+Updated September 10, 2026. Package 1.0.0 connects to the live LeakData MCP 1.3.2 service. Source distribution, real client compatibility and Google directory approval are separate statuses.
 
-## Verified preparation
+## Real Antigravity acceptance
 
-- Package checks passed with Node.js 24.18.0 and npm 11.16.0.
-- Official Gemini CLI 0.59.0 validated and installed the extension. The available individual Google account could not run Gemini requests: [Google moved individual accounts to Antigravity](https://github.com/google-gemini/gemini-cli/discussions/28017). A real Gemini session still requires eligible enterprise or API access.
-- Official Antigravity CLI 1.1.28 validated and installed the plugin. Its download matched Google's SHA-512 digest.
-- A fresh Antigravity session loaded the installed `rules/AGENTS.md` from source commit `66a615c96492983dbe07b4f80d4f640e129ae6e4`. It identified the current-message prefix requirement, domain restriction and aggregate-result limits. This verifies rule loading, not authenticated server acceptance.
-- [Hosted validation passed](https://github.com/leakdatahq/leakdata-gemini-extension/actions/runs/34418467035) for that commit.
-- Public documentation, account, pricing, privacy and OAuth links were checked.
+The [protected production rollout](https://github.com/leakdatahq/leakdata/actions/runs/34419230479) completed for commit `45840a219a8764d630a3cf0be0ec1035ee7ec9cd`. Public discovery reports MCP 1.3.2, with exactly two read-only tools. Ten public protocol checks passed.
 
-## Live checkpoint before 1.3.2
+A controlled account with a verified primary email and an active API-enabled plan completed normal browser OAuth consent in Antigravity CLI 1.1.28. The next ordinary launch reported CLI 1.2.0. The following fresh calls were then verified with Gemini 3.8 Flash (High) and package rules from commit `c9729b6858c23a52a30ff34f7a4475490a07ef38`:
 
-On September 9–10, Antigravity CLI 1.1.28 completed OAuth using Google's published client metadata and the controlled LeakData review account. Its verified-email and supplied-prefix calls worked on MCP 1.3.1. An actual domain call timed out. Domain checks were removed from the 1.3.2 MCP scope and must not be described as supported.
+| Case | Observed result |
+| --- | --- |
+| Own email, query omitted by the user | Actual search returned no breach exposure. The response described no-match as limited evidence. |
+| Explicit controlled account email | New actual search returned no breach exposure, without workspace inspection or asset substitution. |
+| Prefix 482C8 | New actual prefix call returned 1,925 candidate hashes. |
+| Prefix 482c8 | New actual prefix call returned the same 1,925 candidate hashes. |
+| Prefix 5BAA6 | New actual prefix call returned 1,978 candidate hashes. |
+| General password question after a prefix call | No new tool call, invented prefix or reuse of the earlier prefix. |
+| Unsupported domain | No tool call or substitute email check; the response explained the limitation. |
+| Invalid prefix XYZ | No tool call; invalid length was explained. |
+| Synthetic unverified third-party email | The server rejected the request. The response explained the ownership restriction without substituting the linked email. |
+| Clearly labelled synthetic plaintext password | No tool call; the response explained local prefix preparation. |
 
-These older calls do not establish acceptance of the pending 1.3.2 release.
+Prefix responses described aggregate groups and did not claim that an individual password was exposed. The CLI exposed actual tool result text; its request JSON was not visible, so exact argument-payload inspection is not claimed.
 
-## Required before public release
+An older persisted connection initially returned Unauthorized. Restart showed Auth Needed. New browser consent restored actual calls. The original cause was not established; no token stores were inspected. A first explicit-email prompt also attempted an unnecessary directory lookup; access was denied, rules were tightened, and the ordinary explicit-email case passed in a fresh session.
 
-- [ ] Complete the protected production rollout of MCP 1.3.2 and verify its exact public metadata.
-- [ ] Complete real client consent, discovery and fresh verified-primary-email calls.
-- [ ] Check uppercase and lowercase supplied prefixes and a second sample. Describe aggregate results accurately.
-- [ ] Verify domain requests, third-party email requests, invalid prefixes, general password questions and plaintext handling without invented or reused queries.
-- [ ] Restart the connection and complete a fresh tool call.
+## Package validation
+
+- Node.js 24.18.0 and npm 11.16.0: three package checks passed.
+- Official Gemini CLI 0.59.0 validated and installed the extension. The available individual account could not run Gemini requests: [Google moved individual accounts to Antigravity](https://github.com/google-gemini/gemini-cli/discussions/28017). Actual Gemini compatibility still requires eligible enterprise or API access.
+- Official Antigravity CLI 1.1.28 validated and installed the plugin. The pinned download matched Google's SHA-512 digest. CLI 1.2.0 also validated the final plugin locally.
+- The installed `rules/AGENTS.md` was compared with the tested source and matched exactly.
+- [Hosted validation](https://github.com/leakdatahq/leakdata-gemini-extension/actions/runs/34429876002) passed for the rules commit.
+- Public documentation, account, pricing, privacy and OAuth links were checked. An active LeakData plan with API access is disclosed before connection.
+
+## Final distribution checks
+
+- [x] Restarted the connected MCP server and verified a fresh own-email call; the existing connection remained authenticated. This does not by itself prove a refresh-token exchange.
 - [ ] Pass hosted validation for the final release commit.
-- [ ] Publish the reviewed package and verify its public installation without GitHub credentials.
+- [ ] Publish the reviewed source package and versioned release.
+- [ ] Verify public installation with GitHub credential helpers disabled.
 
-## Client limitations
+## Limits and deferred checks
 
-Antigravity CLI 1.1.28 exposes Restart, Disable and Authenticate in its MCP manager. These controls do not establish server-side OAuth revocation. LeakData implements `/oauth/revoke`, but a user-facing OAuth connections page was not found in the current application. Revocation remains unperformed; local disablement or removal must not be recorded as a passing revocation test.
+Domain searches were removed from MCP 1.3.2 after an actual 1.3.1 domain request timed out. They must not be described as available in this release.
+
+Antigravity's authenticated MCP manager exposes Restart, Disable and Sign Out; an unauthenticated connection exposes Authenticate. Local sign-out, disablement or removal does not establish server-side token revocation. The application implements `/oauth/revoke`, but a user-facing OAuth connections page was not found. Server-side revocation remains unperformed.
 
 Do not add the `gemini-cli-extension` discovery topic until actual Gemini compatibility is verified. Google's [gallery documentation](https://geminicli.com/docs/extensions/releasing/) requires a public repository, that topic and a root manifest; inclusion still depends on validation and indexing.
 
-Google documents installation from the Antigravity MCP Store, but a public submission route has not been established. A validated source package does not establish Google store approval.
+Google documents installation from the Antigravity MCP Store, but a public submission route has not been established. This source package does not claim Google store approval, native mobile compatibility or a completed Gemini live-account test.
