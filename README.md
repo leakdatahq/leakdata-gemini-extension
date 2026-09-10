@@ -1,6 +1,6 @@
 <img src="assets/logo-fallback.png" alt="LeakData" width="240">
 
-# LeakData for Antigravity and Gemini CLI
+# LeakData for Antigravity CLI and Gemini CLI
 
 Check your verified email for breach exposure and check password hash prefixes in Antigravity. LeakData returns a concise summary of the evidence it finds, so you can decide what to investigate next.
 
@@ -19,7 +19,7 @@ Results reflect the evidence available to LeakData. A no-match result does not e
 
 You need a LeakData account and a verified primary email for exposure searches. Your LeakData plan, account permissions and usage limits apply. The extension does not include a LeakData subscription.
 
-For individual Google accounts, use Antigravity CLI. Gemini CLI requires an eligible enterprise, Google Cloud or API environment. Your Google account access is separate from your LeakData subscription.
+For individual Google accounts, use Antigravity CLI. [Google moved individual Gemini CLI accounts to Antigravity CLI](https://github.com/google-gemini/gemini-cli/discussions/28017). Gemini CLI remains available through eligible enterprise or API access. Your Google account access is separate from your LeakData subscription.
 
 ## Connect Antigravity CLI
 
